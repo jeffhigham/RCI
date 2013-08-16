@@ -6,27 +6,29 @@ aCat = nil
 bCat = nil
 
 survey = Survey.create! name: "The Relative Captivity Indicator"
+
 open("/Users/jeffh/Sites/rails/RCI/questions.csv") do |csv_questions|
-	csv_questions.read.each_line do |csv_question|
-    	q,a,b = csv_question.chomp.split(",")
-    	puts "Adding question: #{q}"
-    	question = survey.questions.create!({content: q })
-    	if EI.include? question.id.to_s
-    		aCat = "E"
-    		bCat = "I"
-    	elsif SN.include? question.id.to_s
-    		aCat = "S"
-    		bCat = "N"
-    	elsif TF.include? question.id.to_s
-    		aCat = "T"
-    		bCat = "F"
-    	elsif JP.include? question.id.to_s
-    		aCat = "J"
-    		bCat = "P"
-    	end
-    	puts "	Adding anser: #{a} Category: #{aCat}"
- 		question.answers.create! ({content: a, category: aCat})
-    	puts "	Adding anser: #{b} Category: #{bCat}\n\n"
- 		question.answers.create! ({content: b, category: bCat})
-  	end
+csv_questions.read.each_line do |csv_question|
+	q,a,b = csv_question.chomp.split(",")
+	puts "Adding question: #{q}"
+	question = survey.questions.create!({content: q })
+	if EI.include? question.id.to_s
+		aCat = "E"
+		bCat = "I"
+	elsif SN.include? question.id.to_s
+		aCat = "S"
+		bCat = "N"
+	elsif TF.include? question.id.to_s
+		aCat = "T"
+		bCat = "F"
+	elsif JP.include? question.id.to_s
+		aCat = "J"
+		bCat = "P"
+	end
+	puts "	Adding anser: #{a} Category: #{aCat}"
+		question.answers.create! ({content: a, category: aCat})
+	puts "	Adding anser: #{b} Category: #{bCat}\n\n"
+		question.answers.create! ({content: b, category: bCat})
+	end
 end
+

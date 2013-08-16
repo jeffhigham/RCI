@@ -1,0 +1,30 @@
+<h1>Personality Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Message</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personality_types.each do |personality_type| %>
+      <tr>
+        <td><%= personality_type.name %></td>
+        <td><%= personality_type.title %></td>
+        <td><%= link_to 'Show', survey_personality_type_path(@survey,personality_type) %></td>
+        <td><%= link_to 'Edit', edit_survey_personality_type_path(@survey,personality_type) %></td>
+        <td><%= link_to 'Destroy', survey_personality_type_path(@survey,personality_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personality Type', new_survey_personality_type_path %>

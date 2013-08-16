@@ -1,5 +1,12 @@
 RTI::Application.routes.draw do
-  resources :surveys
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  resources :users
+  resources :sessions
+  resources :surveys do
+    resources :personality_types
+  end
   root to: 'surveys#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,10 +1,18 @@
 class SurveysController < ApplicationController
+  
+  #before_filter :authorize, only: [:edit, :update]
+
   def index
     @surveys = Survey.all
   end
 
   def show
     @survey = Survey.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @survey.questions }
+      format.xml { render xml: @survey.questions }
+    end
   end
 
   def new

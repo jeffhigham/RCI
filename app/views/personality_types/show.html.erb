@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @personality_type.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @personality_type.title %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @personality_type.message %>
+</p>
+
+<%= link_to 'Edit', edit_survey_personality_type_path(@survey,@personality_type) %> |
+<%= link_to 'Back', survey_personality_types_path %>
