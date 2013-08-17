@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Questionnaire</title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
   </head>
-  <body>
-    <% if current_user %>
+<!--    
+<% if current_user %>
     Logged in as <%= current_user.email %>.
     <%= link_to "Log Out", logout_path %>
   <% else %>
@@ -18,7 +24,65 @@
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>
       <% end %>
-      <%= yield %>
     </div>
+    <%= javascript_include_tag "application" %>
+-->
+  <body>
+    <!-- Nav and Banner -->
+  
+  <div class="row">
+    <div class="large-6 columns">
+      <ul class="button-group">
+        <li><%= link_to 'Home', root_path, class: "button" %></li>
+        <li><%= link_to 'Take RCI', take_survey_path, class: "button" %></li>
+        <li><%= link_to 'RCI Results', user_survey_results_path(current_user), class: "button" %></li>
+      </ul>
+    </div>
+    <div class="large-6 columns text-right">
+      <% if current_user %>
+    Logged in as <%= current_user.email %>.
+    <%= link_to "Log Out", logout_path %>
+  <% else %>
+    <%= link_to "Sign Up", signup_path %> or
+    <%= link_to "Log In", login_path %>
+  <% end %>
+    </div>
+  </div>
+  
+  <!-- End Nav and Banner -->
+  
+  
+  <!-- Main Content Section -->
+  
+  <div class="row">
+    <div class="large-12 columns">
+    <%= yield %>
+    </div>      
+  </div>
+  
+  
+  <!-- Footer -->
+  
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
+            <li><a href="#">Link 6</a></li>
+            <li><a href="#">Link 7</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
   </body>
 </html>

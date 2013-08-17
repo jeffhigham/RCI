@@ -1,0 +1,29 @@
+<%= form_tag survey_instance_index_path do |f| %>
+  <% if @survey_instance.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@survey_instance.errors.count, "error") %> prohibited this survey_instance from being saved:</h2>
+      <ul>
+      <% @survey_instance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <% @survey_instance.questions.each_with_index do |question,qindex| %>
+    <fieldset>
+    <legend><%= "#{qindex+1}. #{question.content}" %></legend>
+        <% question.answers.each_with_index do |answer,aindex| %>
+          <label>
+            <input name="questions[<%= qindex + 1 %>]" type="radio" value="<%= answer.category %>">
+            <%= answer.content %>
+          </label>
+        <% end %>
+  </fieldset>
+
+  <% end %>
+  <div >
+    <input type="submit" name="submit"/>
+  </div>
+
+<% end %>

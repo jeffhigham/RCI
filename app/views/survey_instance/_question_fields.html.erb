@@ -1,0 +1,7 @@
+<fieldset>
+  <%= f.label :content, "Question" %><br />
+  <%=  f[:content] %><br />
+  <%= f.fields_for :answers do |builder| %>
+    <%= render 'answer_fields', f: builder %>
+  <% end %>
+</fieldset>

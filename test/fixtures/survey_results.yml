@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  survey_id: MyString
+  user_id: MyString
+  total_E: MyString
+  total_I: MyString
+  total_S: MyString
+  total_N: MyString
+  total_T: MyString
+  total_F: MyString
+  total_J: MyString
+  total_P: MyString
+  survey_answers: MyString
+
+two:
+  survey_id: MyString
+  user_id: MyString
+  total_E: MyString
+  total_I: MyString
+  total_S: MyString
+  total_N: MyString
+  total_T: MyString
+  total_F: MyString
+  total_J: MyString
+  total_P: MyString
+  survey_answers: MyString

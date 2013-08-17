@@ -1,0 +1,45 @@
+<h1>Listing survey_results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Indicators</th>
+<!--       <th>E</th>
+      <th>I</th>
+      <th>S</th>
+      <th>N</th>
+      <th>T</th>
+      <th>F</th>
+      <th>J</th>
+      <th>P</th> -->
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @survey_results.each do |survey_result| %>
+      <tr>
+        <td><%= survey_result.personality_type.title %></td>
+        <td><%= survey_result.personality_type.name %></td>
+<!--         <td><%= survey_result.total_E %></td>
+        <td><%= survey_result.total_I %></td>
+        <td><%= survey_result.total_S %></td>
+        <td><%= survey_result.total_N %></td>
+        <td><%= survey_result.total_T %></td>
+        <td><%= survey_result.total_F %></td>
+        <td><%= survey_result.total_J %></td>
+        <td><%= survey_result.total_P %></td> -->
+        <td><%= link_to 'Show', user_survey_result_path(@user,survey_result) %></td>
+        <td><%= link_to 'Edit', edit_user_survey_result_path(@user,survey_result) %></td>
+        <td><%= link_to 'Destroy', user_survey_result_path(@user,survey_result), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Survey result', new_user_survey_result_path %>

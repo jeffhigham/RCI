@@ -1,8 +1,13 @@
 RTI::Application.routes.draw do
+
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  resources :users
+  get 'take_survey', to: 'survey_instance#new', as: 'take_survey'
+  resources :survey_instance
+  resources :users do
+    resources :survey_results
+  end
   resources :sessions
   resources :surveys do
     resources :personality_types

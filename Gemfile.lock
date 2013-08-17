@@ -28,7 +28,14 @@ GEM
     arel (4.0.0)
     atomic (1.1.13)
     bcrypt-ruby (3.0.1)
+    better_errors (0.9.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.1.4)
+    callsite (0.0.11)
+    coderay (1.0.9)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -36,9 +43,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    foundation-icons-sass-rails (2.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.0)
@@ -51,6 +62,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.2.7)
+      callsite
+      rack-contrib
+      railties
     mime-types (1.24)
     minitest (4.7.5)
     multi_json (1.7.9)
@@ -58,6 +73,8 @@ GEM
     protected_attributes (1.0.3)
       activemodel (>= 4.0.0, < 5.0)
     rack (1.5.2)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0)
@@ -84,6 +101,7 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    seed_dump (0.6.0)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -107,19 +125,27 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    zurb-foundation (4.3.1)
+      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
+  better_errors
+  binding_of_caller
   coffee-rails (~> 4.0.0)
+  foundation-icons-sass-rails (~> 2.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  meta_request
   protected_attributes
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc
+  seed_dump
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  zurb-foundation (~> 4.3.0)
