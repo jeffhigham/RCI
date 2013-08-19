@@ -4,15 +4,20 @@ RTI::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'take_survey', to: 'survey_instance#new', as: 'take_survey'
+  get 'survey_user_login', to: 'survey_users#new', as: 'survey_user_login'
   resources :survey_instance
-  resources :users do
+  resources :survey_users do
     resources :survey_results
   end
   resources :sessions
   resources :surveys do
     resources :personality_types
   end
-  root to: 'surveys#index'
+  root to: 'survey_instance#new'
+
+  get 'api/questions/all', to: 'api#all_questions'
+  get 'api/questions/find/:id', to: 'api#find'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

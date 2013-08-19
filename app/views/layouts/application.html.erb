@@ -10,32 +10,29 @@
     <title>Questionnaire</title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-<!--    
-<% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log Out", logout_path %>
-  <% else %>
-    <%= link_to "Sign Up", signup_path %> or
-    <%= link_to "Log In", login_path %>
-  <% end %>
-    <div id="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
-      <% end %>
-    </div>
-    <%= javascript_include_tag "application" %>
--->
+
   <body>
-    <!-- Nav and Banner -->
+  <div class="row" style="border-bottom: #FFE607 2px solid">
+    <div class="large-4 columns text-center">
+      <img src="/rci-large.png" />
+    </div>
+    <div class="large-8 columns">
+      <h3 class="hide-for-small">RELATIVE CAPTIVITY INDICATOR (RCI)TM</h3>
+    </div>
+  </div><br/>
   
-  <div class="row">
+  <!-- Nav and Banner -->    
+  <div class="row hide-for-small">
     <div class="large-6 columns">
       <ul class="button-group">
         <li><%= link_to 'Home', root_path, class: "button" %></li>
         <li><%= link_to 'Take RCI', take_survey_path, class: "button" %></li>
-        <li><%= link_to 'RCI Results', user_survey_results_path(current_user), class: "button" %></li>
+        <% if survey_user %>
+        <li><%= link_to 'RCI Results', survey_user_survey_results_path(current_user), class: "button" %></li>
+        <% end %>
       </ul>
     </div>
     <div class="large-6 columns text-right">
@@ -63,7 +60,7 @@
   
   <!-- Footer -->
   
-  <footer class="row">
+  <footer class="row hide-for-small">
     <div class="large-12 columns">
       <hr />
       <div class="row">
@@ -84,5 +81,6 @@
       </div>
     </div> 
   </footer>
+
   </body>
 </html>

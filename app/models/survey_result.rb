@@ -1,8 +1,11 @@
 class SurveyResult < ActiveRecord::Base
 	attr_accessible :total_E, :total_I, :total_S, :total_N, :total_T,
-	 				:total_F, :total_J, :total_P, :survey_answers, :user_id, :survey_id
-	belongs_to :user
+	 				:total_F, :total_J, :total_P, :survey_answers, :survey_user_id, :survey_id
+	validates_presence_of :total_E, :total_I, :total_S, :total_N, :total_T,
+	 				:total_F, :total_J, :total_P, :survey_user_id, :survey_id
+	belongs_to :survey_user
 	belongs_to :survey
+
 
 	def personality_type
 		key = ""

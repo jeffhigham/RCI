@@ -1,19 +1,21 @@
 class SurveyInstanceController < ApplicationController
   
+  before_filter :authorize_survey_user
+  
   def new
-  	@survey_instance = Survey.first
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @survey_instance.questions }
-      format.xml { render xml: @survey_instance.questions }
-    end
+  	# @survey_instance = Survey.first
+   #  respond_to do |format|
+   #    format.html # show.html.erb
+   #    format.json { render json: @survey_instance.questions }
+   #    format.xml { render xml: @survey_instance.questions }
+   #  end
   end
 
   def create
-    #render json: params['answers']
+    survey_id = 1
     survey_totals = {
-    	survey_id: 1,
-    	user_id: 1,
+    	survey_id: survey_id,
+    	survey_user_id: survey_user.id,
     	total_E: 0,
     	total_I: 0,
     	total_S: 0,
@@ -23,14 +25,26 @@ class SurveyInstanceController < ApplicationController
     	total_J: 0,
     	total_P: 0
     }
-    params['questions'].each do |answer|
-    	survey_totals[:"total_#{answer[1]}"] += 1
+    total_questions = Survey.find(survey_id).questions.count
+    if (params['questions'].blank?)
+      redirect_to take_survey_path, notice: "You didn't answer a SINGLE question!"
+    elsif (params['questions'].count != total_questions)
+      redirect_to take_survey_path, notice: "You answered #{params['questions'].count} of #{total_questions} total questions."
+    else
+      
+      params['questions'].each do |answer|
+    	 survey_totals[:"total_#{answer[1]}"] += 1
+      end
+
+      logger.info "Survey Totals: #{survey_totals.to_s}"
+      survey_result = SurveyResult.new(survey_totals)
+      if survey_result.save!
+  	   redirect_to survey_user_survey_result_path(survey_user,survey_result), notice: "Your Survey Results!"
+      else
+       redirect_to survey_user_survey_results_path(survey_user), notice: "There was a problem with your survey!"
+      end
     end
-    logger.info "Survey Totals: #{survey_totals.to_s}"
-    survey_result = SurveyResult.new(survey_totals)
-    #render json: survey_result
-    survey_result.save!
-	redirect_to user_survey_results_path(current_user), notice: "Successfully created survey."
+
   end
 
 end

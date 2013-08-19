@@ -1,6 +1,6 @@
 class SurveysController < ApplicationController
   
-  #before_filter :authorize, only: [:edit, :update]
+  before_filter :authorize
 
   def index
     @surveys = Survey.all
@@ -10,13 +10,15 @@ class SurveysController < ApplicationController
     @survey = Survey.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @survey.questions }
-      format.xml { render xml: @survey.questions }
+      format.json { render json: @survey }
     end
   end
 
   def new
     @survey = Survey.new
+    respond_to do |format|
+      format.html # show.html.erb
+    end
   end
 
   def create

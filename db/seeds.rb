@@ -247,44 +247,26 @@ Survey.create([
   { :name => "The Relative Captivity Indicator", :created_at => "2013-08-16 03:35:24", :updated_at => "2013-08-16 03:35:24" }
 ], :without_protection => true )
 
-#ENFP 1 2 1 2 1 2 1 2
-#ENFJ 1 2 1 2 1 2 2 1
-# ENTP 1 2 1 2 2 1 1 2
-# ENTJ 1 2 1 2 2 1 2 1
-# ESFJ 1 2 2 1 1 2 2 1
-# ESTJ 1 2 2 1 2 1 2 1
-# ESTP 1 2 2 1 2 1 1 2
-# ESFP 1 2 2 1 1 2 1 2
-INFP 1 2 12 12 12
-ISFJ 1 2 21 12 21
-INFJ 1 2 12 12 21
-ISTJ 1 2 21 21 21
-INTP 1 2 12 21 12
-INTJ 1 2 12 21 21
-ISTP 1 2 21 21 12
-ISFP 1 2 21 12 12
 
 
-
-
-SurveyResult.create([
-  { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-  { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"}
-], :without_protection => true )
+# SurveyResult.create([
+#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
+#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"}
+# ], :without_protection => true )
 
 
 User.create!({email:"jeffhigham@gmail.com",password:"test123", password_confirmation: "test123"})

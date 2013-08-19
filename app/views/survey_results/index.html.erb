@@ -32,14 +32,12 @@
         <td><%= survey_result.total_F %></td>
         <td><%= survey_result.total_J %></td>
         <td><%= survey_result.total_P %></td> -->
-        <td><%= link_to 'Show', user_survey_result_path(@user,survey_result) %></td>
-        <td><%= link_to 'Edit', edit_user_survey_result_path(@user,survey_result) %></td>
-        <td><%= link_to 'Destroy', user_survey_result_path(@user,survey_result), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', survey_user_survey_result_path(survey_user,survey_result) %></td>
+        <td><%= link_to 'Edit', edit_survey_user_survey_result_path(survey_user,survey_result) %></td>
+        <td><%= link_to 'Destroy', survey_user_survey_result_path(survey_user,survey_result), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Survey result', new_user_survey_result_path %>
