@@ -3,8 +3,11 @@
     <input type="hidden" name="questions[<%= i %>]" id="question<%= i %>" value=""/>
   <% end %>
 <% end %>
-
-<h3 id="question"></h3>
-<div class="radius button answer-button" id="answer1" data-category="" style="width:100%"></div><br/>
-<div class="radius button answer-button" id="answer2" data-category="" style="width:100%"></div>
+<div class="row">
+	<div class="small-12 columns">
+	<h3 id="question"></h3>
+		<div class="radius button answer-button" id="answer1" data-category="" style="width:100%"></div><br/>
+		<div class="radius button answer-button" id="answer2" data-category="" style="width:100%"></div>
+	</div>
+</div>
 <script src="/survey.js"></script>

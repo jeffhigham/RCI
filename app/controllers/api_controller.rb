@@ -1,5 +1,7 @@
 class ApiController < ApplicationController
 
+	before_filter :authorize_survey_user
+
 	def all_questions
     	questions = Survey.first.all_questions
 	    respond_to do |format|

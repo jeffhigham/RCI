@@ -25,17 +25,17 @@ class Survey < ActiveRecord::Base
   	survey = Array.new
 
   	  self.questions.each_with_index do |question,index|
-  		survey[index] = Hash.new
-  		survey[index][:question] =  question.content
-  		survey[index][:answers] = Array.new
+  		survey[index+1] = Hash.new
+  		survey[index+1][:question] =  question.content
+  		survey[index+1][:answers] = Array.new
   		question.answers.each do |answer|
-  			survey[index][:answers] << {
+  			survey[index+1][:answers] << {
   					content: answer.content,
   					category: answer.category
   				}
   		end
   	end
-  	survey
+    survey
   end
 
 end

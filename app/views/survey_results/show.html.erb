@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <h3 style="text-align:center">
   <%= @survey_result.personality_type.title %>
 </h3><hr style="width:100%"/>
   <p>
   <%= @survey_result.personality_type.message %>
 </P>
+<div class="row">
+	<div class="large-12 columns text-centered">
+		<%= link_to 'Done!', logout_path, class: "radius button" %>
+	</div>
+</div>
