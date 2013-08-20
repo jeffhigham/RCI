@@ -1,5 +1,7 @@
 RTI::Application.routes.draw do
 
+  resources :homes
+
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
@@ -13,7 +15,7 @@ RTI::Application.routes.draw do
   resources :surveys do
     resources :personality_types
   end
-  root to: 'survey_instance#new'
+  root to: 'homes#index'
 
   get 'api/questions/all', to: 'api#all_questions'
   get 'api/questions/find/:id', to: 'api#find'

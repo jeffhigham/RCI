@@ -1,5 +1,5 @@
 class SurveyInstanceController < ApplicationController
-  
+  layout 'survey'
   before_filter :authorize_survey_user
   
   def new

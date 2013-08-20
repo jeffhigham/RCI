@@ -1,5 +1,5 @@
 class SurveyUsersController < ApplicationController
-
+	layout 'survey'
 	def new
 	  @survey_user = SurveyUser.new
 	end

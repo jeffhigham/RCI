@@ -1,4 +1,5 @@
 class SurveyResultsController < ApplicationController
+  layout 'survey'
   before_filter :authorize_survey_user
   before_action :set_survey_result, only: [:show, :edit, :update, :destroy]
   # before_action :set_user

@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Questionnaire</title>
+    <title>RPI | BiggerGains International</title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= javascript_include_tag "application" %>
@@ -17,49 +17,94 @@
   <body>
   <div class="row" style="border-bottom: #FFE607 2px solid">
     <div class="large-12 columns text-center">
-      <img src="/rci-large.png" style="width:500px"/>
+      <a href="/"><img src="/rci-large.png" style="width:500px"/></a>
     </div>
   </div><br/>
   
-  <!-- Nav and Banner -->    
-  <div class="row hide-for-small">
-    <div class="large-6 columns">
-      <ul class="button-group">
-        <li><%= link_to 'Home', root_path, class: "button" %></li>
-        <li><%= link_to 'Take RCI', take_survey_path, class: "button" %></li>
-        <% if survey_user %>
-        <li><%= link_to 'RCI Results', survey_user_survey_results_path(current_user), class: "button" %></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="large-6 columns text-right">
-      <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log Out", logout_path %>
-  <% else %>
-    <%= link_to "Sign Up", signup_path %> or
-    <%= link_to "Log In", login_path %>
-  <% end %>
-    </div>
-  </div>
-  
-  <!-- End Nav and Banner -->
-  
-  
-  <!-- Main Content Section -->
-  
   <div class="row">
-    <div class="large-12 columns">
-    <%= yield %>
-    </div>      
+    <div class="large-6 columns">
+      <div class="flex-video">
+        <iframe src="http://www.youtube.com/embed/bB-bs0Y7kmc?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="large-6 columns hide-for-small radius panel">
+      <p style="font-size: 22px; color: #999; text-align:justify"><i><strong style="font-size: 1.2em">The RPI</strong> is a unique personality profile test that will help you see some of the ways you are sabotaging your own success, some strengths you have, and give you insight into how you can get rid of some of the chains that hold you back. When you honestly answer the questions, you will be amazed at the results!<br/>~ Kenn Sullivan</i></p>
+    </div>
+    <div class="large-6 columns show-for-small">
+      <p style="font-size: 10px; color: #999; text-align:justify"><i><strong style="font-size: 1.2em">The RPI</strong> is a unique personality profile test that will help you see some of the ways you are sabotaging your own success, some strengths you have, and give you insight into how you can get rid of some of the chains that hold you back. When you honestly answer the questions, you will be amazed at the results!<br/>~ Kenn Sullivan</i></p>
+    </div>
   </div>
-  
-  
-  <!-- Footer -->
-  
+     
+ 
+  <!-- End Mobile Header -->
+ 
+    </div>
+  </div><br>
+ 
+  <div class="row hide-for-small">
+    <div class="large-12 columns">
+      <div class="row">
+ 
+    <!-- Thumbnails -->
+ 
+        <div class="large-3 small-6 columns">
+          <img src="http://placehold.it/250x250&text=Thumbnail" />
+          <div class="panel">Shining Star</div>
+        </div>
+ 
+        <div class="large-3 small-6 columns">
+          <img src="http://placehold.it/250x250&text=Thumbnail" />
+          <div class="panel">Concerned Chameleon</div>
+        </div>
+ 
+        <div class="large-3 small-6 columns">
+          <img src="http://placehold.it/250x250&text=Thumbnail" />
+          <div class="panel">People's Person</div>
+        </div>
+ 
+        <div class="large-3 small-6 columns">
+          <img src="http://placehold.it/250x250&text=Thumbnail" />
+          <div class="panel">Tenacious Bulldog</div>
+        </div>
+ 
+    <!-- End Thumbnails -->
+ 
+      </div>
+    </div>
+  </div>
+ 
+   <!-- Call to Action Panel -->
+  <div class="row hide-for-small">
+    <div class="large-12 columns">
+    
+      <div class="panel">
+        <h4>What is yor RPI?</h4>
+            
+        <div class="row">
+          <div class="large-9 columns">
+            <p>Take the RPI test now…then go and tell all of your friends, so you can compare profiles.</p>
+          </div>
+          <div class="large-3 columns">
+            <a href="/take_survey" class="radius button right">Get Started!</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- mobile screen -->
+ <div class="row">
+  <div class="large-12 columns show-for-small">
+    <a href="/take_survey" class="radius button" style="width: 100%">Take The RPI Now!</a>
+  </div>
+ </div>
+
+    <!-- Footer Large -->
+ 
   <footer class="row hide-for-small">
     <div class="large-12 columns">
-      <hr />
+      <hr>
       <div class="row">
         <div class="large-6 columns">
           <p>&copy; Copyright no one at all. Go to town.</p>
@@ -70,14 +115,14 @@
             <li><a href="#">Link 2</a></li>
             <li><a href="#">Link 3</a></li>
             <li><a href="#">Link 4</a></li>
-            <li><a href="#">Link 5</a></li>
-            <li><a href="#">Link 6</a></li>
-            <li><a href="#">Link 7</a></li>
           </ul>
         </div>
       </div>
-    </div> 
+    </div>
   </footer>
+
+      <!-- Footer small -->
+ 
 
   </body>
 </html>
