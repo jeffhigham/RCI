@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="large-6 large-centered text-center columns">
+		<%= will_paginate @survey_users %>
+	</div>
+</div><br/>
+<div class="row">
+	<div class="large-10 large-centered columns">
+		<table style="width:100%">
+			<tr>
+				<th>User ID</th>
+				<th>Personality</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Address</th>
+				<th>Phone Number</th>
+				<th><a href="<%= survey_users_path %>.csv"><i class="general foundicon-address-book" style="font-size: 2.5em; color:#2EC12E"></i></a>
+				</th>
+			</tr>
+		<% @survey_users.each do |user| %>
+			<tr>
+				<td><%= user.id %></td>
+				<td><%= user.personality_type %></td>
+				<td><%= user.first_name %></td>
+				<td><%= user.last_name %></td>
+				<td><%= link_to user.email, "mailto:#{user.email}" %></td>
+				<td><%= user.phone %></td>
+				<th><%= link_to "Show", survey_user_path(user), :class => "tiny radius button" %></th>
+			</tr>
+		<% end %>
+	</div>
+</div><br/>

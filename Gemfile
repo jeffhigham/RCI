@@ -55,3 +55,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'protected_attributes'
 
 gem 'seed_dump'
+gem 'will_paginate', '> 3.0'

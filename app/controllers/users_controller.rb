@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+	before_filter :authorize
+
 	def new
 	  @user = User.new
 	end
@@ -19,4 +21,5 @@ class UsersController < ApplicationController
 
 	def index
 	end
+	
 end

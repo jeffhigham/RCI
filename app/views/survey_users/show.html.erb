@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="large-12 columns">
+		<p> Name:
+			<%= "#{@survey_user.first_name} #{@survey_user.last_name}" %>
+		</P>
+		<p> Email:
+			<%= @survey_user.email %>
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+		<table>
+			<tr>
+				<th>Indicator</th>
+				<th>Title</th>
+				<th>Date</th>
+			</tr>
+
+		<% @survey_user.survey_results.each do |result| %>
+			<tr>
+				<td><%= result.personality_type.name %></td>
+				<td><%= link_to result.personality_type.title, personality_type_path(result.personality_type) %></td>
+				<td><%= result.personality_type.created_at %></td>
+			</tr>
+		<% end %>
+		</table>
+	</div>
+</div>

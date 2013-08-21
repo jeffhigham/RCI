@@ -1,6 +1,11 @@
 RTI::Application.routes.draw do
 
   resources :homes
+  resources :sessions
+  resources :users
+  resources :survey_users
+  resources :personality_types
+  resources :admin
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
@@ -11,7 +16,6 @@ RTI::Application.routes.draw do
   resources :survey_users do
     resources :survey_results
   end
-  resources :sessions
   resources :surveys do
     resources :personality_types
   end

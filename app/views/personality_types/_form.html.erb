@@ -1,4 +1,4 @@
-<%= form_for [@survey,@personality_type] do |f| %>
+<%= form_for @personality_type do |f| %>
   <% if @personality_type.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@personality_type.errors.count, "error") %> prohibited this personality_type from being saved:</h2>

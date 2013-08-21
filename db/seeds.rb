@@ -142,7 +142,14 @@ Answer.create([
   { :question_id => 69, :content => "chaos and disorganization", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25", :category => "J" },
   { :question_id => 69, :content => "a chance to change things", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25", :category => "P" },
   { :question_id => 70, :content => "be scheduled and habitual", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25", :category => "J" },
-  { :question_id => 70, :content => "do things on a whim", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25", :category => "P" }
+  { :question_id => 70, :content => "do things on a whim", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25", :category => "P" },
+  { :question_id => 71, :content => "blue", :created_at => "2013-08-20 23:20:54", :updated_at => "2013-08-20 23:20:54", :category => "red" }
+], :without_protection => true )
+
+
+
+Home.create([
+  { :index => nil, :created_at => nil, :updated_at => nil }
 ], :without_protection => true )
 
 
@@ -238,37 +245,33 @@ Question.create([
   { :survey_id => 1, :content => "What would you rather have", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25" },
   { :survey_id => 1, :content => "You lean more toward being", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25" },
   { :survey_id => 1, :content => "Which do you recognize most", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25" },
-  { :survey_id => 1, :content => "You tend to ", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25" }
+  { :survey_id => 1, :content => "You tend to ", :created_at => "2013-08-16 03:35:25", :updated_at => "2013-08-16 03:35:25" },
+  { :survey_id => 2, :content => "What is your favorite color?", :created_at => "2013-08-20 23:20:54", :updated_at => "2013-08-20 23:20:54" }
 ], :without_protection => true )
 
 
 
 Survey.create([
-  { :name => "The Relative Captivity Indicator", :created_at => "2013-08-16 03:35:24", :updated_at => "2013-08-16 03:35:24" }
+  { :name => "The Raw Personality Indicator", :created_at => "2013-08-16 03:35:24", :updated_at => "2013-08-20 23:04:31" },
+  { :name => "Some Other Survey", :created_at => "2013-08-20 23:20:14", :updated_at => "2013-08-20 23:20:32" }
 ], :without_protection => true )
 
 
 
-# SurveyResult.create([
-#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 1, :total_I => 2, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 1, :total_N => 2, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 2, :total_P => 1, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 2, :total_F => 1, :total_J => 1, :total_P => 2, :survey_answers => "blah"},
-#   { :survey_id => 1, :user_id => 1, :total_E => 2, :total_I => 1, :total_S => 2, :total_N => 1, :total_T => 1, :total_F => 2, :total_J => 1, :total_P => 2, :survey_answers => "blah"}
-# ], :without_protection => true )
+(1..5000).each do
+survey_user = SurveyUser.create([
+  { :first_name => "joe", :last_name => "", :company => nil, :title => nil, :email => "joe@email.com", :created_at => "2013-08-21 03:20:21", :updated_at => "2013-08-21 03:20:39", :phone => "", :personality_type => "ENFP" }
+], :without_protection => true )
+end
+
+(1..5000).each do |i|
+SurveyResult.create([
+  { :survey_id => 1, :survey_user_id => i, :total_E => 6, :total_I => 4, :total_S => 10, :total_N => 10, :total_T => 10, :total_F => 10, :total_J => 8, :total_P => 12, :survey_answers => nil, :created_at => "2013-08-21 03:17:53", :updated_at => "2013-08-21 03:17:53" }
+], :without_protection => true )
+end
 
 
-User.create!({email:"jeffhigham@gmail.com",password:"test123", password_confirmation: "test123"})
+User.create([
+  { :email => "jeffhigham@gmail.com", :password => "test123", :password_confirmation => "test123" } ] , :without_protection => true )
 
 

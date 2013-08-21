@@ -33,12 +33,18 @@ class SurveyInstanceController < ApplicationController
     else
       
       params['questions'].each do |answer|
-    	 survey_totals[:"total_#{answer[1]}"] += 1
+        if survey_totals[:"total_#{answer[1]}"].nil?
+          redirect_to take_survey_path, notice: "There was a problem with your survey, please try again."
+        else
+          survey_totals[:"total_#{answer[1]}"] += 1
+        end
       end
 
       logger.info "Survey Totals: #{survey_totals.to_s}"
       survey_result = SurveyResult.new(survey_totals)
       if survey_result.save!
+        survey_user.personality_type = survey_result.personality_type.name
+        survey_user.save!
   	   redirect_to survey_user_survey_result_path(survey_user,survey_result), notice: "Your Survey Results!"
       else
        redirect_to survey_user_survey_results_path(survey_user), notice: "There was a problem with your survey!"

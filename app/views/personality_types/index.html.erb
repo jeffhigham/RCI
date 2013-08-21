@@ -17,9 +17,9 @@
       <tr>
         <td><%= personality_type.name %></td>
         <td><%= personality_type.title %></td>
-        <td><%= link_to 'Show', survey_personality_type_path(@survey,personality_type) %></td>
-        <td><%= link_to 'Edit', edit_survey_personality_type_path(@survey,personality_type) %></td>
-        <td><%= link_to 'Destroy', survey_personality_type_path(@survey,personality_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', personality_type_path(personality_type) %></td>
+        <td><%= link_to 'Edit', edit_personality_type_path(personality_type) %></td>
+        <td><%= link_to 'Destroy', personality_type_path(personality_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Personality Type', new_survey_personality_type_path %>
+<%= link_to 'New Personality Type', new_personality_type_path %>

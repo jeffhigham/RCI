@@ -1,10 +1,22 @@
-<h1>Surveys</h1>
-
-<% @surveys.each do |survey| %>
-  <div class="article">
-    <h2><%= link_to survey.name, survey %></h2>
-    <%= pluralize(survey.questions.size, "Question") %>
-  </div>
-<% end %>
-
-<p><%= link_to 'New Survey', new_survey_path %></p>
+<br/>
+<div class="row">
+	<div class="large-12  columns">
+	<% @surveys.each do |survey| %>
+	<div class="row">
+		<div class="large-4 columns">
+	    	<%= link_to survey.name, survey %>
+		</div>
+		<div class="large-4 columns">
+	    	<%= pluralize(survey.questions.size, "Question") %>
+		</div>
+		<div class="large-4 columns">
+			<%= link_to 'Edit', edit_survey_path(survey), :class => "small radius button" %>
+		</div>
+	</div>
+	<% end %><br/>
+	<div class="row">
+		<div class="large-12 columns ">
+		<%= link_to 'New Survey', new_survey_path, :class =>"small radius button" %>
+		</div>
+	</div>
+</div>

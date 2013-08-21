@@ -1,7 +1,7 @@
 class PersonalityTypesController < ApplicationController
   before_filter :authorize
   before_action :set_personality_type, only: [:show, :edit, :update, :destroy]
-  before_action :set_survey
+  # before_action :set_survey
 
   # GET /personality_types
   # GET /personality_types.json
