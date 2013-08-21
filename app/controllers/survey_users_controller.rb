@@ -7,6 +7,8 @@ class SurveyUsersController < ApplicationController
 
 	def create
 	  @survey_user = SurveyUser.new(params[:survey_user])
+	  @survey_user.ip_address = request.remote_ip
+	  @survey_user.user_agent = request.headers["user-agent"]
 	  if @survey_user.save
 	    session[:survey_user_id] = @survey_user.id
 	    redirect_to take_survey_url
@@ -17,16 +19,16 @@ class SurveyUsersController < ApplicationController
 
 	def show
 		@survey_user = SurveyUser.find(params[:id])
-
 	end
 
 	def index
 		respond_to do |format|
 	    format.html {
-	    	@survey_users = SurveyUser.all.page(params[:page])
+	    	@survey_users = SurveyUser.search(params[:search]).order('id DESC').page(params[:page])
+	    	@csv_url = "#{survey_users_path}.csv?search=#{params[:search]}"
 	    }
 	    format.csv {
-	    	 @survey_users = SurveyUser.all
+	    	@survey_users = SurveyUser.search(params[:search]).order('id ASC')
 	    	send_data @survey_users.to_csv
 	    }
 	    format.xls # { send_data @products.to_csv(col_sep: "\t") }

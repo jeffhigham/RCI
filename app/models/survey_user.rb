@@ -14,4 +14,17 @@ class SurveyUser < ActiveRecord::Base
 	  end
 	end
 
+	def self.search(search)
+	  if search
+	    where( 'email LIKE ? or first_name LIKE ? or last_name LIKE ? or personality_type like ? or id like  ? or gender like ?', 
+	    	"%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" )
+	  else
+	    scoped
+	  end
+	end
+
+	def account_created
+		Time.parse(created_at.to_s).strftime("%m/%d/%Y")
+	end
+
 end

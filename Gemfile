@@ -56,3 +56,5 @@ gem 'protected_attributes'
 
 gem 'seed_dump'
 gem 'will_paginate', '> 3.0'
+gem 'geocoder'
+gem 'sexmachine'

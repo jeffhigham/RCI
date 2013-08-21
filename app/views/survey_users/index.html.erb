@@ -4,7 +4,14 @@
 	</div>
 </div><br/>
 <div class="row">
-	<div class="large-10 large-centered columns">
+	<div class="large-4 large-centered columns">
+		<%= form_tag survey_users_path, :method => 'get', :id => "survey_users_search" do %>
+		    	<%= text_field_tag :search, params[:search] %>
+		<% end %>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12  columns">
 		<table style="width:100%">
 			<tr>
 				<th>User ID</th>
@@ -13,7 +20,9 @@
 				<th>Last Name</th>
 				<th>Email Address</th>
 				<th>Phone Number</th>
-				<th><a href="<%= survey_users_path %>.csv"><i class="general foundicon-address-book" style="font-size: 2.5em; color:#2EC12E"></i></a>
+				<th>Gender</th>
+				<th>Created</th>
+				<th><a href="<%= @csv_url %>"<%= params[:search] %>><i class="general foundicon-address-book" style="font-size: 2.5em; color:#2EC12E"></i></a>
 				</th>
 			</tr>
 		<% @survey_users.each do |user| %>
@@ -24,6 +33,8 @@
 				<td><%= user.last_name %></td>
 				<td><%= link_to user.email, "mailto:#{user.email}" %></td>
 				<td><%= user.phone %></td>
+				<td><%= user.gender %></td>
+				<td><%= user.account_created %></td>
 				<th><%= link_to "Show", survey_user_path(user), :class => "tiny radius button" %></th>
 			</tr>
 		<% end %>
