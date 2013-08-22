@@ -6,9 +6,9 @@ RTI::Application.routes.draw do
   resources :users
   resources :survey_users
   resources :personality_types
-  resources :admin
 
-  get 'signup', to: 'users#new', as: 'signup'
+  #get 'signup', to: 'users#new', as: 'signup'
+  get 'dashboard', to: 'sessions#new', as: 'dashboard'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'take_survey', to: 'survey_instance#new', as: 'take_survey'

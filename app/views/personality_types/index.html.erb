@@ -1,11 +1,11 @@
-<h1>Personality Types</h1>
 
-<table>
+<div class="row">
+  <div class="large-8 large-centered columns">
+<table style="width:100%">
   <thead>
     <tr>
       <th>Name</th>
       <th>Title</th>
-      <th>Message</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,14 +17,16 @@
       <tr>
         <td><%= personality_type.name %></td>
         <td><%= personality_type.title %></td>
-        <td><%= link_to 'Show', personality_type_path(personality_type) %></td>
-        <td><%= link_to 'Edit', edit_personality_type_path(personality_type) %></td>
-        <td><%= link_to 'Destroy', personality_type_path(personality_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', personality_type_path(personality_type) , class: "tiny radius button" %></td>
+        <td><%= link_to 'Edit', edit_personality_type_path(personality_type), class: "tiny radius button" %></td>
+        <td><%= link_to 'Destroy', personality_type_path(personality_type), method: :delete, data: { confirm: 'Are you sure?' }, class: "tiny radius button alert" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+<div class="large-8 large-centered columns text-right">
+<%= link_to 'New Personality Type', new_personality_type_path, class: "radius button" %>
 
-<br>
-
-<%= link_to 'New Personality Type', new_personality_type_path %>
+</div>
+</div>
