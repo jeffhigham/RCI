@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @personality_type.name %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @personality_type.title %>
-</p>
-
-<p>
-  <strong>Message:</strong>
-  <%= @personality_type.message %>
-</p>
-
-<%= link_to 'Edit', edit_personality_type_path(@personality_type) %> |
-<%= link_to 'Back', personality_types_path %>
+<div class="row">
+	<div class="large-8 large-centered columns text-center">
+		<h4><%= @personality_type.title %></h4><hr/>
+	</div>
+</div>
+<div class="row">
+	<div class="large-8 large-centered columns">
+		<%= @personality_type.message.html_safe %><hr/>
+	</div>
+</div><br/>
+<div class="row">
+	<div class="large-8 large-centered columns text-center">
+		<a class="radius button"  style="background-color: #3B5998" href="#" onclick="window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+      'facebook-share-dialog', 
+      'width=626,height=436'); 
+    return false;">
+  <i class="social foundicon-facebook"></i>&nbsp;Share On Facebook!</a>
+  <a class="radius button" style="background-color: #4099FF" href="https://twitter.com/share"><i class="social foundicon-twitter"></i>&nbsp;Share On Twitter!</a>
+  <% if !survey_user %>
+  <a class="radius button success" href="/take_survey"><i class="general foundicon-idea"></i>&nbsp;Find Your RPI!</a>
+  <% end %>
+	</div>
+</div>

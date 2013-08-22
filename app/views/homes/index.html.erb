@@ -1,29 +1,23 @@
-  <div class="row">
-    <div class="large-6 columns">
+  <div class="row" >
+    <div class="large-8 columns">
       <div class="flex-video">
         <iframe src="http://www.youtube.com/embed/bB-bs0Y7kmc?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-    
-    <!-- full screen view -->
-    <div class="large-6 columns hide-for-small radius panel">
-      <div class="row">
-        <h4>What Is Your RPI?</h4>
-      <p>"Take the RPI test now…then go and tell all of your friends, so you can compare profiles.<br/>
-    </div>
-    <div class="row text-center">
+    <div class="large-4 columns">
+      <div class="row text-center"><br/><br/>
       <%= link_to "Take The RPI Now!", take_survey_path, :class => "large radius button success" %>
-    </div>
-    </div>
-
-    <!-- mobile view -->
-    <div class="large-6 columns show-for-small">
+      </div>
+      <div class="row text-center">
+      <div id="fb-root"></div>
+      <p><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/biggergains" show_faces="true" stream="false" header="false"></fb:like-box>
+      <div class='sociable'>
+      <div><iframe src='http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fbiggergains.com%2Frci%2F&amp;layout=standard&amp;colorscheme=light&amp;show_faces=false' scrolling='no' frameborder='0' class='sociable-fb-standard'></iframe></div>
+      </div>
     </div>
   </div>
-     
-  
     </div>
-  </div><br>
+  </div>
 
     <!-- mobile screen -->
  <div class="row">
@@ -32,114 +26,58 @@
   </div>
  </div>
  
-   <div class="row hide-for-small">
-    <div class="large-12 columns">
-      <div class="row">
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Shining Star</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Concerned Chameleon</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">People's Person</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Tenacious Bulldog</div>
-        </div>
-      </div>
+<!-- personality types -->
+
+   <div class="row hide-for-small" >
+    <h4>RPI's 16 Personality Types</h4><hr/>
+    <div class="large-12 columns" style="height:250px; overflow:scroll">
 
       <div class="row">
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Shining Star</div>
+        
+        <% @personalty_types[1..4].each do |p| %>
+        <div class="large-3 columns text-center" >
+          <a href="<%= personality_type_path(p) %>"><img src="/img/avatar.gif" /></a>
+          <div class="panel text-center" style="font-size: 12px"><%= p.title %></div>
         </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Concerned Chameleon</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">People's Person</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Tenacious Bulldog</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Shining Star</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Concerned Chameleon</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">People's Person</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Tenacious Bulldog</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Shining Star</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Concerned Chameleon</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">People's Person</div>
-        </div>
- 
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <div class="panel">Tenacious Bulldog</div>
-        </div>
-      </div>      
-
-    </div>
-  </div> 
- 
-   <!-- Call to Action Panel -->
-   <div class="row hide-for-small">
-    <div class="large-12 columns">
-    
-      <div class="panel">
-        <h4>What is yor RPI?</h4>
-            
-        <div class="row">
-          <div class="large-9 columns">
-            <p>Take the RPI test now…then go and tell all of your friends, so you can compare profiles.</p>
-          </div>
-          <div class="large-3 columns">
-            <a href="/take_survey" class="radius button right">Get Started!</a>
-          </div>
-        </div>
-      </div>
+        <% end %>
       
+      </div>
+
+      <div class="row">
+        
+        <% @personalty_types[5..8].each do |p| %>
+        <div class="large-3 columns text-center">
+          <a href="<%= personality_type_path(p) %>"><img src="/img/avatar.gif" /></a>
+          <div class="panel text-center" style="font-size: 12px"><%= p.title %></div>
+        </div>
+        <% end %>
+      
+      </div>
+
+      <div class="row">
+        
+        <% @personalty_types[9..12].each do |p| %>
+        <div class="large-3 columns text-center">
+          <a href="<%= personality_type_path(p) %>"><img src="/img/avatar.gif" /></a>
+          <div class="panel text-center" style="font-size: 12px"><%= p.title %></div>
+        </div>
+        <% end %>
+      
+      </div>
+
+
+      <div class="row">
+        
+        <% @personalty_types[13..16].each do |p| %>
+        <div class="large-3 columns text-center">
+          <a href="<%= personality_type_path(p) %>"><img src="/img/avatar.gif" /></a>
+          <div class="panel text-center" style="font-size: 12px"><%= p.title %></div>
+        </div>
+        <% end %>
+      
+      </div>
+     
+
     </div>
   </div> 
+ 
