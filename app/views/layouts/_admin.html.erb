@@ -1,0 +1,10 @@
+  <% if current_user %>
+    <div class="row">
+    <div class="large-8 large-centered text-center columns">
+      <%= link_to "<i class=\"general foundicon-edit\"></i> RPI Questions".html_safe, edit_survey_path(1), :class => "radius button" %>
+      <%= link_to "<i class=\"general foundicon-address-book\"></i> User Database".html_safe, survey_users_path, :class => "radius button" %>
+      <%= link_to "<i class=\"general foundicon-graph\"></i> Reports".html_safe, reports_path, :class => "radius button" %>
+      <%= link_to "<i class=\"general foundicon-unlock\"></i> Logout".html_safe, logout_path, :class => "radius button alert" %>
+    </div>
+  </div>
+  <% end %>

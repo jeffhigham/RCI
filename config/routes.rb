@@ -1,5 +1,6 @@
 RTI::Application.routes.draw do
 
+  resources :reports
   resources :homes
   resources :sessions
   resources :users
