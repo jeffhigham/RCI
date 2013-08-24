@@ -39,7 +39,7 @@ group :development do
 end
 
 gem 'zurb-foundation','~>4.3.0'
-gem 'foundation-icons-sass-rails', '~>2.0.0'
+gem 'foundation-icons-sass-rails'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

@@ -141,7 +141,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
-  foundation-icons-sass-rails (~> 2.0.0)
+  foundation-icons-sass-rails
   geocoder
   jbuilder (~> 1.2)
   jquery-rails
