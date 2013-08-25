@@ -44,7 +44,7 @@ class PersonalityTypesController < ApplicationController
   def update
     respond_to do |format|
       if @personality_type.update(params[:personality_type])
-        format.html { redirect_to survey_personality_types_url(@survey,@personality_type), notice: 'PersonalityType was successfully updated.' }
+        format.html { redirect_to personality_types_url, notice: 'PersonalityType was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -40,12 +40,13 @@ class SurveyInstanceController < ApplicationController
         end
       end
 
-      logger.info "Survey Totals: #{survey_totals.to_s}"
+      # logger.info "Survey Totals: #{survey_totals.to_s}"
       survey_result = SurveyResult.new(survey_totals)
       if survey_result.save!
         survey_user.personality_type = survey_result.personality_type.name
         survey_user.save!
-  	   redirect_to survey_user_survey_result_path(survey_user,survey_result), notice: "Your Survey Results!"
+  	   #redirect_to survey_user_survey_result_path(survey_user,survey_result), notice: "Your Survey Results!"
+       redirect_to personality_type_path(survey_result.personality_type)
       else
        redirect_to survey_user_survey_results_path(survey_user), notice: "There was a problem with your survey!"
       end

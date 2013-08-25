@@ -17,8 +17,10 @@
     return false;">
   <i class="social foundicon-facebook"></i>&nbsp;Share On Facebook!</a>
   <a class="radius button" style="background-color: #4099FF" href="https://twitter.com/share"><i class="social foundicon-twitter"></i>&nbsp;Share On Twitter!</a>
-  <% if !survey_user %>
-  <a class="radius button success" href="/take_survey"><i class="general foundicon-idea"></i>&nbsp;Find Your RPI!</a>
+  <% if survey_user %>
+  	<%= link_to 'Done!', logout_path, class: "radius button success" %>
+  <% else %>
+    <a class="radius button success" href="/take_survey"><i class="general foundicon-idea"></i>&nbsp;Find Your RPI!</a>
   <% end %>
 	</div>
 </div>
